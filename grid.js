@@ -111,4 +111,13 @@ gridSize.addEventListener("input", () => {
     reloadGrid();   
 });
 
+window.addEventListener("resize", (e) => {
+    console.log(grid.childNodes);
+    for (let element of grid.childNodes) {
+        element.style.width = `${grid.clientWidth / currentSize}px`;
+        element.style.height = `${grid.clientHeight / currentSize}px`;
+    }
+});
+
+
 createGrid(currentSize);

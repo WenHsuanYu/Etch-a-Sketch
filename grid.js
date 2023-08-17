@@ -58,7 +58,7 @@ grid.addEventListener("mouseup", () => {
 
 function createGrid(gridSize) {
     for (let i = 0; i < gridSize * gridSize; i++) {
-        grid.appendChild(createDiv(grid.clientWidth / gridSize));
+        grid.appendChild(createDiv(Math.min(grid.clientWidth, grid.clientHeight) / gridSize));
     }
 }
 
